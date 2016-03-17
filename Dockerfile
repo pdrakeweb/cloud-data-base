@@ -14,6 +14,8 @@
 
 FROM centos:7.1.1503
 
+ENV LANG=en_US.utf8
+
 # Install packages and RVM.
 RUN set -xe \
     && yum remove -y fakesystemd \
@@ -23,8 +25,8 @@ RUN set -xe \
     && yum clean all
 
 # Install Ruby and Bundler.
-RUN /bin/bash -l -c "rvm install 2.2.3 \
-    && rvm default 2.2.3 \
+RUN /bin/bash -l -c "rvm install 2.2.4 \
+    && rvm default 2.2.4 \
     && gem install bundler \
     && rvm cleanup all"
 

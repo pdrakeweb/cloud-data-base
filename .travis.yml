@@ -2,8 +2,7 @@ language: ruby
 sudo: required
 services: docker
 install: docker ps -a
-script:
-  - docker build -t cloud-data-base .
-  - docker run -v "$PWD":/opt/test -w /opt/test --rm -t cloud-data-base bash -l -c 'bundle install -j2'
+rvm:
+  - 2.2.4
 notifications:
   email: false
